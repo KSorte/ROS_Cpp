@@ -1,0 +1,2 @@
+ros_cpp
+-DCATKIN_DEVEL_PREFIX=/home/kaushal/ros_prac/devel -DCMAKE_INSTALL_PREFIX=/home/kaushal/ros_prac/install -G Unix Makefiles

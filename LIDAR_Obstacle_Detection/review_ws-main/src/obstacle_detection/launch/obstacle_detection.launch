@@ -1,0 +1,28 @@
+<launch>
+  <param name="threshold" type = "int" value="100"/>
+  <arg name="use_rviz" default="false"/>
+  <arg name="play_bag" default="true"/>
+
+  <node
+    pkg="obstacle_detection"
+    type="detector_node"
+    name="detector_node"
+    output="screen">
+  </node>
+
+  <node
+    pkg="rviz"
+    type="rviz"
+    name="rviz"
+    args="-d $(find obstacle_detection)/rviz/obstacle_detection.rviz"
+    output="screen"
+    if="$(arg use_rviz)"/>
+
+  <node
+    if="$(arg play_bag)"
+    pkg="rosbag"
+    type="play"
+    name="rosbag"
+    args="-l $(find gazebo_datagen)/bags/scan.bag"/>
+
+</launch>

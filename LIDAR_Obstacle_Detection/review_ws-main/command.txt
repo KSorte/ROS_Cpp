@@ -1,0 +1,2 @@
+roslaunch obstacle_detection obstacle_detection.launch use_rviz:=true
+
